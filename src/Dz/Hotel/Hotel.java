@@ -113,6 +113,7 @@ public class Hotel {
      *    > sum() пробегает по всем значениям этого потока и возвращает сумму.
      */
     public double calculateRevenue(LocalDate from, LocalDate to) {
+        System.out.println("");
         return bookings.stream()
                 .filter(b -> b.getStatus() == BookingStatus.BOOKED)
                 .filter(b -> !(b.getEnd().isBefore(from) || b.getStart().isAfter(to)))
