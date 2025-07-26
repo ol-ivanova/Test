@@ -114,7 +114,7 @@ public class Hotel {
      */
     public double calculateRevenue(LocalDate from, LocalDate to) {
         System.out.println("");
-        System.out.println("feat3");
+        System.out.println("feat4");
         return bookings.stream()
                 .filter(b -> b.getStatus() == BookingStatus.BOOKED)
                 .filter(b -> !(b.getEnd().isBefore(from) || b.getStart().isAfter(to)))
