@@ -4,33 +4,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main implements Pair <String, Integer> {
-    Map<String, Integer> map = new HashMap<>();
+    Map.Entry<String, Integer> entry;
 
     @Override
     public String getKey() {
-        return map.keySet();
+        return entry.getKey();
     }
 
     @Override
     public Integer getValue() {
-        return 0;
+        return entry.getValue();
     }
 
-    public Main(Map<String, Integer> map) {
-        this.map = map;
+    public Main(Map.Entry<String, Integer> entry) {
+        this.entry = entry;
     }
 
     public static void main(String[] args) {
-        Map<String, Integer> map1 = new HashMap<>();
-        map1.put("Понедельник", 1);
-        map1.put("Вторник", 2);
-        map1.put("Среда", 3);
-        map1.put("Четверг", 4);
-
-        Main main1 = new Main(map1);
-
-
-
-
+        Map<String, Integer> map = new HashMap<>();
+        for (Map.Entry<String, Integer> entry1 : map.entrySet()){
+            Main main = new Main(entry1);
+            System.out.println(main.getKey());
+            System.out.println(main.getValue());
+        }
     }
 }
